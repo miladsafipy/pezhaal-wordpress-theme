@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Soraya;
+    src: url('../../../fonts/Soraya.ttf');
+}
+
+@font-face {
+    font-family: 'Paeez';
+    src: url('../../../fonts/Paeez.ttf');
+}
+
+
+:root{
+
+    /* Colors */
+    
+        /* Brand */
+    --primary:#102b21;
+    --primary-light:#0f502d;
+    --primary-dark:#0F221B;
+
+        /* Accent */
+    --secondary:#ff937e;
+
+        /* Surface */
+    --surface:#FFFFFF;
+    --background:#f5e1c2fd;
+    --cream: #f8f6ef;
+    --gold: #d5a642;
+    --overlay-bg: rgb(211, 210, 210, .45);
+
+        /* Text */
+    --text:#222222;
+    --text-light:#666666;
+    --text-muted:#999999;
+
+        /* Border */
+    --border:#E6E6E6;
+
+        /* States */
+    --success:#2E7D32;
+    --warning:#F9A825;
+    --error:#D32F2F;
+    --info:#0288D1;
+
+    --red: red;
+    --blue: blue;
+    --green: green;
+    --yellow: yellow;
+    --black: black;
+    --white: white;
+    
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-2xl: 40px;
+    --radius-3xl: 80px;
+    --radius-circle: 100%;
+
+
+    /* Spaces */
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:48px;
+    --space-3xl:64px;
+
+
+    /* Shadow */
+    --shadow-sm:0 4px 10px rgba(0,0,0,.05);
+    --shadow-md:0 10px 25px rgba(0,0,0,.08);
+    --shadow-lg:0 20px 40px rgba(0,0,0,.12);
+
+    /* Z-Index */
+    --z-navbar: 1000;
+    --z-overlay: 2000;
+    --z-search-bar: 2100;
+    --z-mobile-menu: 2100;
+    --z-cart-drawer: 2100;
+    --z-modal: 2200;
+
+
+    /* Transitions */
+    --transition-fast:.2s ease;
+    --transition-normal:.3s ease;
+    --transition-slow:.5s ease;
+    --transition-very-slow: 1s ease;
+    --form-transition: transform .75s cubic-bezier(.65,.05,.36,1);;
+
+
+    /* Fonts */
+    --soraya-font: Soraya;
+    --paeez-font: 'Paeez';
+
+}

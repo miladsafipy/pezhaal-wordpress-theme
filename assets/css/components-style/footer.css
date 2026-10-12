@@ -1,0 +1,303 @@
+
+/* ========================================
+   Pezhaal Footer
+======================================== */
+
+.site-footer {
+    --footer-bg: #102b21;
+    --footer-text: #ffffff;
+    --footer-muted: rgba(255, 255, 255, 0.76);
+    --footer-border: rgba(255, 255, 255, 0.15);
+
+    direction: rtl;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 64px 24px 24px;
+}
+
+.site-footer * {
+    box-sizing: border-box;
+}
+
+.site-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+}
+
+
+/* سه ستون اصلی */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    padding-bottom: 48px;
+}
+
+
+/* ستون راست: برند */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.footer-brand-name {
+    font-family: inherit;
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+
+/* عنوان ستون‌ها */
+
+.footer-column-title {
+    margin: 0 0 22px;
+    color: var(--footer-text);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* ستون لینک‌ها */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer-link {
+    display: inline-block;
+    color: var(--footer-muted) !important;
+    font-size: 14px;
+    line-height: 1.9;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-link:hover {
+    color: var(--footer-text) !important;
+    transform: translateX(-4px);
+}
+
+
+/* شبکه‌های اجتماعی */
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-social-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--footer-muted) !important;
+    font-size: 14px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-social-link:hover {
+    color: var(--footer-text) !important;
+    transform: translateX(-4px);
+}
+
+.footer-social-icon {
+    flex: 0 0 auto;
+}
+
+
+/* خطوط جداکننده گرادیانی */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(255, 255, 255, 0.2) 90%,
+        transparent 100%
+    );
+}
+
+
+/* بخش اعتماد و پرداخت */
+
+.footer-trust {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 36px 0;
+    text-align: center;
+}
+
+.footer-trust-title {
+    margin: 0;
+    color: var(--footer-text);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 500;
+    line-height: 1.9;
+}
+
+.footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 72px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-badge:hover {
+    background: rgba(255, 255, 255, 0.11);
+    transform: translateY(-3px);
+}
+
+.footer-badge a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-badge-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90px;
+    max-height: 66px;
+    object-fit: contain;
+}
+
+
+/* متن حقوق */
+
+.footer-bottom {
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer-copyright {
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* واکنش‌گرایی */
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding: 44px 20px 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 24px;
+        padding-bottom: 36px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        min-height: 90px;
+    }
+
+    .footer-links,
+    .footer-socials {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social-list {
+        align-items: center;
+    }
+
+    .footer-column-title {
+        margin-bottom: 18px;
+    }
+
+    .footer-trust {
+        padding: 28px 0;
+        gap: 22px;
+    }
+
+    .footer-badges {
+        gap: 12px;
+    }
+
+    .footer-badge {
+        min-width: 70px;
+        min-height: 64px;
+    }
+
+    .footer-badge-image {
+        max-width: 76px;
+        max-height: 54px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-links,
+    .footer-socials {
+        align-items: center;
+    }
+
+    .footer-badges {
+        gap: 10px;
+    }
+}

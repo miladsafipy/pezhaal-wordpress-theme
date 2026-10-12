@@ -1,0 +1,20 @@
+/*
+Theme Name: Pezhaal
+Theme URI: http://localhost/pezhaal/wordpress
+Author: Milad Safi
+Description: Custom WordPress theme for Pezhaal store
+Version: 1.0
+Text Domain: pezhaal
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+}
+

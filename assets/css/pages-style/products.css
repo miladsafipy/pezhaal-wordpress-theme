@@ -1,0 +1,56 @@
+
+.shop-page {
+    direction: rtl;
+    padding: 40px 0 64px;
+}
+
+.shop-page__container {
+    width: min(1200px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.shop-page__header {
+    margin-bottom: 28px;
+}
+
+.shop-page__title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* شبکه محصولات */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* تبلت */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+    .shop-page {
+        padding-block: 24px 40px;
+    }
+
+    .shop-page__container {
+        width: calc(100% - 28px);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .shop-page__title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,48 @@
+
+/* Title Divider Component */
+
+.title-divider {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        to left,
+        #102b21 0%,
+        #2f6b50 45%,
+        rgba(47, 107, 80, 0) 100%
+    );
+
+    border: none;
+    border-radius: 999px;
+    margin: 20px 0 30px auto;
+}
+
+@media (max-width: 768px) {
+    .title-divider {
+        width: 100%;
+        height: 2px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+}
+
+
+
+/* Section Divider Component */
+
+.section-divider {
+    width: 80%;
+    height: 3px;
+
+    background: linear-gradient(
+        to right,
+        rgba(16, 43, 33, 0) 0%,
+        #2f6b50 30%,
+        #102b21 50%,
+        #2f6b50 70%,
+        rgba(16, 43, 33, 0) 100%
+    );
+
+    border: none;
+    border-radius: 999px;
+    margin: 20px auto 30px;
+}

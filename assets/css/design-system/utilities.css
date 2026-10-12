@@ -1,0 +1,13 @@
+/* ========      BITTONS       ======= */
+.general-btn{
+    background: var(--primary);
+    color: var(--white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+}
+
+.general-btn:hover{
+    background: var(--primary-light);
+    transform: translateY(-3px);
+}
