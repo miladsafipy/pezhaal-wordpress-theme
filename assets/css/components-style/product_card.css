@@ -94,26 +94,27 @@
 /* ========================================
    Rating
    ======================================== */
-
 .product-card__rating {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    color: var(--gold);
-    font-size: smaller;
+    gap: 7px;
+    direction: rtl;
+    margin-top: 8px;
 }
 
 .product-card__rating .star-rating {
     float: none;
     margin: 0;
-    color: var(--gold);
-    font-size: small;
+    color: #d99a16;
+    font-size: 14px;
 }
 
-.product-card__rating .star-rating span::before {
-    color: var(--gold);
+.product-card__rating-count,
+.product-card__rating-empty {
+    color: #777;
+    font-size: 12px;
 }
+
 
 
 /* ========================================

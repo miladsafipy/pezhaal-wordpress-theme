@@ -1,0 +1,43 @@
+/* ==============================
+            PAGINATION
+=================================*/
+.shop-page .woocommerce-pagination{
+    margin: var(--space-xl) 0;
+}
+
+.shop-page .woocommerce-pagination ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    border: none;
+    padding: var(--space-lg) auto;
+    margin: var(--space-sm) auto;
+}
+
+.shop-page .woocommerce-pagination ul li{
+    border: none;
+    margin: 0;
+}
+
+.shop-page .woocommerce-pagination ul li a,
+.shop-page .woocommerce-pagination ul li span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0 var(--space-md);
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-circle);
+    background: var(--cream);
+    color: var(--primary);
+    transition: var(--transition-normal);
+}
+
+.shop-page .woocommerce-pagination ul li a:hover,
+.shop-page .woocommerce-pagination ul li span.current{
+    background: var(--primary);
+    color: var(--cream);
+    transform: translateY(-2px);
+}

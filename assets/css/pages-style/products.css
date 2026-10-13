@@ -10,28 +10,78 @@
 }
 
 .shop-page__header {
-    margin-bottom: 28px;
+    margin-bottom: var(--space-xl);
 }
 
 .shop-page__title {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* شبکه محصولات */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    align-items: stretch;
+    gap: var(--space-lg);
+    align-items: center;
+    margin: var(--space-2xl) auto;
 }
+
+
+
+/* ==============================
+            PAGINATION
+=================================*/
+/* .shop-page .woocommerce-pagination{
+    margin: var(--space-xl) 0;
+}
+
+.shop-page .woocommerce-pagination ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    border: none;
+    padding: var(--space-lg);
+    margin: 0 auto;
+}
+
+.shop-page .woocommerce-pagination ul li{
+    border: none;
+    margin: 0;
+}
+
+.shop-page .woocommerce-pagination ul li a,
+.shop-page .woocommerce-pagination ul li span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0 var(--space-md);
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-circle);
+    background: var(--cream);
+    color: var(--primary);
+    transition: var(--transition-normal);
+}
+
+.shop-page .woocommerce-pagination ul li a:hover,
+.shop-page .woocommerce-pagination ul li span.current{
+    background: var(--primary);
+    color: var(--cream);
+    transform: translateY(-3px);
+} */
+
+
+
 
 /* تبلت */
 @media (max-width: 1024px) {
     .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
     }
 }
 
@@ -46,7 +96,7 @@
     }
 
     .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 12px;
     }
 

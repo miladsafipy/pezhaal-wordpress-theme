@@ -9,11 +9,13 @@ get_header( 'shop' );
 
     <div class="shop-page__container">
 
+        <div class="section-divider"></div>
         <!-- عنوان صفحه فروشگاه -->
         <header class="shop-page__header">
             <h1 class="shop-page__title">
-                <?php woocommerce_page_title(); ?>
+                محصولات پژال
             </h1>
+            <div class="section-divider"></div>
         </header>
 
         <?php if ( woocommerce_product_loop() ) : ?>

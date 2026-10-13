@@ -291,6 +291,27 @@ function pezhaal_enqueue_assets() {
             true
         );
     }
+
+    /* ==============================
+        Carousel Gallery
+    ============================== */
+
+    $hero_js_relative_path = '/assets/js/carousel.js';
+
+    $hero_js_path =
+        get_template_directory()
+        . $hero_js_relative_path;
+
+    if (file_exists($hero_js_path)) {
+
+        wp_enqueue_script(
+            'pezhaal-carousel-script',
+            get_template_directory_uri() . $hero_js_relative_path,
+            array(),
+            filemtime($hero_js_path),
+            true
+        );
+    }
 }
 
 add_action(
@@ -1211,3 +1232,14 @@ JS;
     wp_add_inline_script('pezhaal-footer-admin', $script);
 }
 add_action('admin_enqueue_scripts', 'pezhaal_footer_admin_assets');
+
+
+
+
+
+// ===============================
+// تعداد محصولات در هر صفحه
+// ===============================
+add_filter( 'loop_shop_per_page', function ( $products_per_page ) {
+    return 9;
+}, 20 );

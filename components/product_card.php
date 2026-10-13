@@ -61,28 +61,37 @@ $max_quantity = $product->get_max_purchase_quantity();
         
 
         <!-- امتیاز و تعداد رأی‌دهندگان -->
-        <?php if ( $product->get_rating_count() > 0 ) : ?>
+        
+        <?php
+        $average_rating = (float) $product->get_average_rating();
+        $rating_count   = (int) $product->get_rating_count();
+        ?>
+
+        <?php if ( $rating_count > 0 ) : ?>
+
             <div class="product-card__rating">
 
                 <?php
-                echo wp_kses_post(
-                    wc_get_rating_html(
-                        $average_rating,
-                        $review_count
-                    )
+                echo wc_get_rating_html(
+                    $average_rating,
+                    $rating_count
                 );
                 ?>
 
-                <span class="product-card__review-count">
-                    (<?php echo esc_html( $review_count ); ?> نظر)
+                <span class="product-card__rating-count">
+                    (<?php echo esc_html( number_format_i18n( $rating_count ) ); ?>)
                 </span>
 
             </div>
+
         <?php else : ?>
-            <div class="product-card__rating product-card__rating--empty">
-                هنوز امتیازی ثبت نشده است
+
+            <div class="product-card__rating-empty">
+                هنوز امتیازی ثبت نشده
             </div>
+
         <?php endif; ?>
+
 
         <!-- قیمت -->
         <div class="product-card__price">

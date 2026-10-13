@@ -1,0 +1,34 @@
+/* ============================
+        RATING AND REVIEW
+=============================== */
+.product-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 20px;
+    direction: rtl;
+    font-size: 14px;
+}
+
+.product-rating__stars {
+    display: flex;
+    align-items: center;
+}
+
+.product-rating .star-rating {
+    float: none;
+    margin: 0;
+    color: #d99a16;
+    font-size: 18px;
+}
+
+.product-rating__average {
+    color: var(--primary-dark, #102b21);
+    font-weight: 700;
+}
+
+.product-rating__count {
+    color: #777;
+    font-size: 13px;
+}
