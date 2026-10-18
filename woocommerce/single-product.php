@@ -4,6 +4,7 @@ get_header();
 
 ?>
 
+
 <main class="single-product-page">
 
     <?php if ( have_posts() ) : ?>
@@ -14,24 +15,41 @@ get_header();
 
             <article class="single-product">
 
-                <?php
-                get_template_part(
-                    'components/product-gallery'
-                );
-                ?>
+                <div class="single-product__image-content">
 
-                <?php
-                get_template_part(
-                    'components/product-summary'
-                );
-                ?>
+                    <section class="single-product__image">
+    
+                        <?php
+                        get_template_part(
+                            'components/product-gallery'
+                        );
+                        ?>
+    
+                    </section>
+    
+                    <section class="single-product__content">
+    
+                        <?php
+                        get_template_part(
+                            'components/product-summary'
+                        );
+                        ?>
+    
+                    </section>
+                    
+                </div>
 
-                <!-- Active Rating and Review in WooCommerce -->
-                <?php
-                if ( comments_open() || get_comments_number() ) {
-                    comments_template();
-                }
-                ?>
+
+
+                <section class="single-product__review">
+
+                    <?php
+                    get_template_part(
+                        'components/product-reviews'
+                    );
+                    ?>
+
+                </section>
 
 
             </article>
@@ -43,7 +61,5 @@ get_header();
 </main>
 
 <?php
-
 get_footer();
-
 ?>

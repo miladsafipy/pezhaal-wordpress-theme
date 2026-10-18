@@ -1,0 +1,128 @@
+/* ==========================
+            LAYOUT
+============================= */
+.product-summary{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+}
+
+
+/* ==========================
+            CATEGORY
+============================= */
+.product-category{
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.product-category label{
+    font-size: smaller;
+    color: var(--text-light);
+}
+
+.product-category span a{
+    color: var(--primary-light);
+}
+
+
+/* ==========================
+            TITLE
+============================= */
+.product-title{
+    color: var(--primary);
+}
+
+
+/* ==========================
+        DESCRIPTION
+============================= */
+.product-detail__description{
+    margin: var(--space-sm) var(--space-md);
+    color: var(--text);
+}
+
+
+
+/* ==========================
+            PRICE
+============================= */
+.product-detail__price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin: var(--space-md) auto;
+}
+
+.price-text{
+    color: var(--text);
+}
+
+.price-count{
+    font-size: larger;
+    color: var(--primary-light);
+}
+
+
+
+/* ==========================
+            STOCK
+============================= */
+.product-detail__stock{
+    display: flex;
+    gap: var(--space-md);
+}
+
+.stock-status{
+    color: var(--text);
+}
+
+.product-available{
+    color: var(--primary-light);
+}
+
+.product-unavailable{
+    color: var(--red);
+}
+
+
+/* ==========================
+            FORM
+============================= */
+.product-detail__purchase{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-quantity{
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.product-quantity label{
+    color: var(--primary);
+}
+
+.product-quantity input{
+    width: 80px;
+    height: 40px;
+    color: var(--primary-light);
+}
+
+.product-detail__button{
+    background: var(--primary);
+    color: var(--cream);
+    padding: var(--space-md) var(--space-lg);
+    border: none;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.product-detail__button:hover{
+    background: var(--primary-light);
+    transform: translateY(-3px);
+}

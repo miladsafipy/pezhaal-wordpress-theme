@@ -312,6 +312,28 @@ function pezhaal_enqueue_assets() {
             true
         );
     }
+
+
+    /* ==============================
+        Review Carts
+    ============================== */
+
+    $hero_js_relative_path = '/assets/js/product-reviews.js';
+
+    $hero_js_path =
+        get_template_directory()
+        . $hero_js_relative_path;
+
+    if (file_exists($hero_js_path)) {
+
+        wp_enqueue_script(
+            'pezhaal-product-reviews-script',
+            get_template_directory_uri() . $hero_js_relative_path,
+            array(),
+            filemtime($hero_js_path),
+            true
+        );
+    }
 }
 
 add_action(

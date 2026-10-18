@@ -1,4 +1,44 @@
 /* ============================
+        LAYOUT
+=============================== */
+.single-product{
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    gap: var(--space-xl);
+}
+
+.single-product__image-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-lg);
+    gap: var(--space-lg);
+    height: max-content;
+}
+
+.single-product__image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: var(--space-md);
+}
+
+.single-product__content{
+    display: flex;
+    width: 50%;
+    margin: var(--space-md);
+}
+
+.single-product__review{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+/* ============================
         RATING AND REVIEW
 =============================== */
 .product-rating {
