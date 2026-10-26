@@ -1,0 +1,114 @@
+/* ==========================
+            COUPON
+============================= */
+.coupon{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-md) auto;
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.woocommerce-form-coupon-toggle{
+    color: var(--primary);
+}
+
+.woocommerce-form-coupon-toggle a{
+    color: var(--primary-light);
+}
+
+.checkout_coupon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0;
+}
+
+.input-text{
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.input-text:focus{
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-md);
+}
+
+.coupon-btn{
+    border: none;
+    border-radius: var(--radius-lg);
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: var(--space-sm) var(--space-lg);
+    transition: var(--transition-normal);
+}
+
+.coupon-btn:hover{
+    cursor: pointer;
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+        ORDER RIVIEW
+============================= */
+.order-total th,
+.order-total td{
+    color: var(--primary-light);
+}
+
+
+
+
+
+
+/* ==========================
+
+============================= */
+
+
+
+
+
+
+
+/* ==========================
+
+============================= */
+
+
+
+
+
+
+
+/* ==========================
+
+============================= */
+
+
+
+
+
+
+
+/* ==========================
+
+============================= */
+
+
+
+
+
+
+
+
+/* ==========================
+
+============================= */

@@ -1265,3 +1265,59 @@ add_action('admin_enqueue_scripts', 'pezhaal_footer_admin_assets');
 add_filter( 'loop_shop_per_page', function ( $products_per_page ) {
     return 9;
 }, 20 );
+
+
+
+
+
+
+// ===============================
+//          CHECKOUT
+// ===============================
+add_filter('woocommerce_checkout_fields', 
+            'pezhaal_customize_checkout_fields');
+function pezhaal_customize_checkout_fields($fields){
+    // نام
+    $fields['billing'] ['billing_first_name'] ['label'] = 'نام';
+    $fields['billing'] ['billing_first_name'] ['placeholder'] = 'نام خود را وارد کنید';
+    $fields['billing'] ['billing_first_name'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    // نام خانوادگی
+    $fields['billing'] ['billing_last_name'] ['label'] = 'نام خانوادگی';
+    $fields['billing'] ['billing_last_name'] ['placeholder'] = 'نام خانوادگی خود را وارد کنید';
+    $fields['billing'] ['billing_last_name'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_country'] ['label'] = 'کشور';
+    $fields['billing'] ['billing_country'] ['placeholder'] = 'کشور خود را وارد کنید';
+    $fields['billing'] ['billing_country'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_state'] ['label'] = 'استان';
+    $fields['billing'] ['billing_state'] ['placeholder'] = 'استان محل سکونت';
+    $fields['billing'] ['billing_state'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_city'] ['label'] = 'شهر';
+    $fields['billing'] ['billing_city'] ['placeholder'] = 'شهر محل سکونت';
+    $fields['billing'] ['billing_city'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_address_1'] ['label'] = 'خیابان';
+    $fields['billing'] ['billing_address_1'] ['placeholder'] = 'خیابان اصلی';
+    $fields['billing'] ['billing_address_1'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_address_2'] ['label'] = 'آدرس دقیق';
+    $fields['billing'] ['billing_address_2'] ['placeholder'] = 'خیابان فرعی، ساختمان، واحد';
+    $fields['billing'] ['billing_address_2'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_postcode'] ['label'] = 'کدپستی';
+    $fields['billing'] ['billing_postcode'] ['placeholder'] = 'کدپستی خود را وارد کنید';
+    $fields['billing'] ['billing_postcode'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_phone'] ['label'] = 'شماره تماس';
+    $fields['billing'] ['billing_phone'] ['placeholder'] = 'شماره ی تماس خود را وارد کنید';
+    $fields['billing'] ['billing_phone'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    $fields['billing'] ['billing_email'] ['label'] = 'ایمیل';
+    $fields['billing'] ['billing_email'] ['placeholder'] = 'ایمیل خود را وارد کنید';
+    $fields['billing'] ['billing_email'] ['class'] = array('', 'pezhaal-checkout-field');
+
+    return $fields;
+}
