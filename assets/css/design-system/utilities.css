@@ -1,13 +1,30 @@
-/* ========      BITTONS       ======= */
+/* ========      BUTTONS       ======= */
 .general-btn{
-    background: var(--primary);
-    color: var(--white);
-    padding: var(--space-sm) var(--space-md);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: var(--space-md) 0 0 0;
+    padding: var(--space-sm);
+    border: none;
     border-radius: var(--radius-md);
-    transition: var(--transition-normal);
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: var(--fw-bold);
+    color: var(--surface);
+    background: var(--primary);
+    cursor: pointer;
+    transition: 
+        transform .3s,
+        box-shadow .3s,
+        background .3s;
 }
 
 .general-btn:hover{
+    transform:
+        translateY(-2px);
+    box-shadow: var(--shadow-md);
     background: var(--primary-light);
-    transform: translateY(-3px);
 }
