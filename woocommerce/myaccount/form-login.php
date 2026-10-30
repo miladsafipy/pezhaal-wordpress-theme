@@ -74,11 +74,11 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 								<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				
 								<!-- Login Button -->
-								<button type="submit" class="general-btn woocommerce-button button woocommerce-form-login__submit<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'ورود', 'woocommerce' ); ?></button>
+								<button type="submit" class="general-btn" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'ورود', 'woocommerce' ); ?></button>
 								
 					
 								<!-- Forgot Password-->
-								<p class="woocommerce-LostPassword lost_password">
+								<p class="forgot-password">
 									<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'رمز عبور را فراموش کرده ام', 'woocommerce' ); ?></a>
 								</p>
 					
@@ -130,7 +130,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			
 						<p class="woocommerce-form-row form-row">
 							<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-							<button type="submit" class="general-btn woocommerce-Button woocommerce-button button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'ثبت نام', 'woocommerce' ); ?></button>
+							<button type="submit" class="general-btn" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'ثبت نام', 'woocommerce' ); ?></button>
 						</p>
 			
 						<?php do_action( 'woocommerce_register_form_end' ); ?>

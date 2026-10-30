@@ -1,3 +1,6 @@
+/* ==================================
+            FORM LAYOUT
+=====================================*/
 .auth{
     width: 100%;
     height: 100%;
@@ -12,6 +15,7 @@
     height: 100%;
 }
 
+/* ----------------- HEADER ----------------- */
 .auth-header{
     display: flex;
     flex-direction: row;
@@ -22,44 +26,7 @@
     align-items: center;
 }
 
-.auth-viewport{
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-.auth-slider{
-    display: flex;
-    width: 200%;
-    height: 100%;
-    transition: var(--form-transition);
-}
-
-.auth-slider.register-active{
-    transform: translateX(50%);
-}
-
-.auth-slide{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-xl);
-    padding:  var(--space-xs);
-    min-height: 0;
-    width: 50%;
-    flex-shrink: 0;
-}
-
-/* ==========================
-            FORM
-=============================*/
-
-
-
-/* ==============================
-            TAB DESIGN
-=================================*/
+/* ----------------- TAB DESIGN ----------------- */
 .tab-design{
     display:flex;
     flex-direction: row;
@@ -99,6 +66,56 @@
 
 }
 
+
+/* ==================================
+            LOGIN FORM DESIGN
+=====================================*/
+.auth-viewport{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-slider{
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: var(--form-transition);
+}
+
+.auth-slider.register-active{
+    transform: translateX(50%);
+}
+
+.auth-slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xl);
+    padding:  var(--space-xs);
+    min-height: 0;
+    width: 50%;
+    flex-shrink: 0;
+}
+
+/* -------- FORM  -------- */
+.customize-form{
+    border: var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-xl);
+}
+
+
+
+/* -------- FORGOT PASSWORD  -------- */
+.forgot-password a{
+    font-size: x-small;
+    margin: var(--space-md) auto;
+    color: var(--text);
+}
+
+
 /* ============================
             INPUT DESIGN
 =============================== */
@@ -114,4 +131,83 @@
 
 .woocommerce-Input:focus{
     border-color: var(--primary-light);
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+/* ==========================
+    MY ACCOUNT DASHBOARD
+============================= */
+
+/* -------- LAYOUT DESIGN  -------- */
+.myAccount{
+    margin: var(--space-xl);
+    width: 100%;
+    height: 100%;
+}
+
+.myAccount__container{
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-sm);
+    width: 100%;
+    height: 100%;
+}
+
+.myAccount-navigation__layout{
+    padding: var(--space-xl) var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.myAccount-content__layout{
+    padding: var(--space-xl) var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+
+/* -------- NAVIGATION -------- */
+.myAccount-navigation__list ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.myAccount-navigation__list ul li{
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-normal);
+}
+
+.myAccount-navigation__list ul li a{
+    color: var(--primary-dark);
+    transition: var(--transition-normal);
+}
+
+.myAccount-navigation__list ul li:hover{
+    cursor: pointer;
+    background: var(--primary-light);
+}
+
+.myAccount-navigation__list ul li:hover a{
+    color: var(--white);
+}
+
+/* -------- CONTENTS -------- */
+.dashboard__content{
+    margin-top: var(--space-xl);
+}
+
+.dashboard__content a{
+    margin: 0 var(--space-sm);
+    color: var(--primary-light);
+    transition: var(--transition-normal);
+}
+
+.dashboard__content a:hover{
+    color: var(--primary);
+    text-decoration: underline;
 }

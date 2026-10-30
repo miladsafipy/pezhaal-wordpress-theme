@@ -1342,3 +1342,29 @@ function pezhaal_customize_checkout_fields($fields){
 
     return $fields;
 }
+
+
+
+// ===============================
+//  Translate Account navigation
+// ===============================
+add_filter('woocommerce_account_menu_items', 'pezhaal_translate_account_menu');
+function pezhaal_translate_account_menu($items){
+    $translation = [
+        'dashboard' => 'پیشخوان',
+        'orders' => 'سفارشات',
+        'downloads' => 'دانلودها',
+        'edit-address' => 'آدرس های من',
+        'payment-methods' => 'روش های پرداخت',
+        'edit-account' => 'جزئیات حساب کاربری',
+        'customer-logout' => 'خروج از حساب',
+    ];
+
+    foreach($translation as $key => $label){
+        if (isset($items[$key])){
+            $items[$key] = $label;
+        }
+    }
+
+    return $items;
+}
