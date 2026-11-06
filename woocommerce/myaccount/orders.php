@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php if ( $has_orders ) : ?>
 
-	<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+	<table class="orders-table-customize">
 		<thead>
 			<tr>
 				<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) : ?>
@@ -38,7 +38,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 				$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				$item_count = $order->get_item_count() - $order->get_item_count_refunded();
 				?>
-				<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
+				<tr class="table-row-customize">
 					<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) :
 						$is_order_number = 'order-number' === $column_id;
 					?>
@@ -65,8 +65,8 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 							<?php elseif ( 'order-total' === $column_id ) : ?>
 								<?php
-								/* translators: 1: formatted order total 2: total order items */
-								echo wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) );
+								/* translators: 1: formatted order total 2: total order items  ->   sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), */
+								echo wp_kses_post( $order->get_formatted_order_total(), $item_count ) ;
 								?>
 
 							<?php elseif ( 'order-actions' === $column_id ) : ?>
@@ -82,7 +82,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										} else {
 											$action_aria_label = $action['aria-label'];
 										}
-										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '" aria-label="' . esc_attr( $action_aria_label ) . '">' . esc_html( $action['name'] ) . '</a>';
+										echo '<a href="' . esc_url( $action['url'] ) . '" class="general-btn">مشاهده</a>';
 										unset( $action_aria_label );
 									}
 								}
@@ -118,7 +118,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php else : ?>
 
-	<?php wc_print_notice( esc_html__( 'No order has been made yet.', 'woocommerce' ) . ' <a class="woocommerce-Button wc-forward button' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'woocommerce' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment ?>
+	<?php wc_print_notice( esc_html__( 'هنوز سفارشی ثبت نشده است.', 'woocommerce' ) . ' <a class="woocommerce-Button wc-forward button' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'woocommerce' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment ?>
 
 <?php endif; ?>
 

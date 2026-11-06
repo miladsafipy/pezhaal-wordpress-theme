@@ -211,3 +211,57 @@
     color: var(--primary);
     text-decoration: underline;
 }
+
+
+
+
+/* ==========================
+        ORDERS TABLE
+============================= */
+.orders-table-customize{
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-lg);
+}
+
+
+.orders-table-customize thead{
+    text-align: center;
+    background: var(--primary);
+}
+
+.orders-table-customize thead tr{
+    color: var(--white);
+}
+
+.orders-table-customize thead tr th{
+    padding: var(--space-lg) var(--space-sm);
+    border-radius: var(--radius-lg);
+}
+
+
+.orders-table-customize tbody{
+    text-align: center;
+}
+
+.table-row-customize{
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-lg);
+}
+
+.orders-table-customize tbody tr th,
+.orders-table-customize tbody tr td{
+    padding: var(--space-lg) var(--space-sm);
+}
+
+
+/* ==========================
+        VIEW ORDERS
+============================= */
+.order-number,
+.order-date,
+.order-status{
+    background: rgb(99, 233, 99);
+    border-radius: var(--radius-lg);
+    padding: var(--space-sm) var(--space-md);
+}

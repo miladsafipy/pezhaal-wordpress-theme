@@ -1368,3 +1368,19 @@ function pezhaal_translate_account_menu($items){
 
     return $items;
 }
+
+// ===============================
+//      Translate Order Table
+// ===============================
+add_filter('woocommerce_account_orders_columns', 'pezhaal_translate_order_columns');
+function pezhaal_translate_order_columns($columns){
+    $translations = [
+        'order-number' => 'کد سفارش',
+        'order-date' => 'تاریخ ثبت',
+        'order-status' => 'وضعیت سفارش',
+        'order-total' => 'مبلغ سفارش',
+        'order-actions' => 'عملیات',
+    ];
+
+    return $translations;
+}

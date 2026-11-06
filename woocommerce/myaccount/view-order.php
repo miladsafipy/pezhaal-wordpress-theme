@@ -35,7 +35,8 @@ echo wp_kses_post(
 		'woocommerce_order_details_status',
 		sprintf(
 		/* translators: 1: order number 2: order date 3: order status */
-			esc_html__( 'Order #%1$s was placed on %2$s and is currently %3$s.', 'woocommerce' ),
+		// Order #%1$s was placed on %2$s and is currently %3$s.
+			esc_html__( 'سفارش شماره ی  %1$s در تاریخ %2$s ثبت شده است و در مرحله ی  %3$s می باشد.', 'woocommerce' ),
 			'<mark class="order-number">' . $order->get_order_number() . '</mark>', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'<mark class="order-date">' . wc_format_datetime( $order->get_date_created() ) . '</mark>', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'<mark class="order-status">' . wc_get_order_status_name( $order->get_status() ) . '</mark>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
