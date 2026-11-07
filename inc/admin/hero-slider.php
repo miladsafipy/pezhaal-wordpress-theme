@@ -57,11 +57,7 @@ function pezhaal_hero_meta_box_callback($post) {
         'pezhaal_hero_nonce'
     );
 
-    $description = get_post_meta(
-        $post->ID,
-        '_hero_description',
-        true
-    );
+    
 
     $button_text = get_post_meta(
         $post->ID,
@@ -76,19 +72,7 @@ function pezhaal_hero_meta_box_callback($post) {
     );
     ?>
 
-    <p>
-        <label for="hero_description">
-            توضیح هیرو
-        </label>
-    </p>
-
-    <textarea
-        id="hero_description"
-        name="hero_description"
-        rows="4"
-        style="width:100%;"
-    ><?php echo esc_textarea($description); ?></textarea>
-
+    
 
     <p>
         <label for="hero_button_text">
@@ -155,17 +139,6 @@ function pezhaal_save_hero_meta($post_id) {
         return;
     }
 
-
-    if (isset($_POST['hero_description'])) {
-
-        update_post_meta(
-            $post_id,
-            '_hero_description',
-            sanitize_textarea_field(
-                $_POST['hero_description']
-            )
-        );
-    }
 
 
     if (isset($_POST['hero_button_text'])) {

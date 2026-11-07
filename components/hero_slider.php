@@ -20,11 +20,6 @@
 
                     $hero_slides->the_post();
 
-                    $description = get_post_meta(
-                        get_the_ID(),
-                        '_hero_description',
-                        true
-                    );
 
                     $button_text = get_post_meta(
                         get_the_ID(),
@@ -52,24 +47,6 @@
                         <div class="hero-overlay"></div>
 
                         <div class="hero-content">
-
-                            <h3>
-                                <?php
-                                the_title();
-                                ?>
-                            </h3>
-
-                            <?php if ($description) : ?>
-
-                                <p>
-                                    <?php
-                                    echo esc_html($description);
-                                    ?>
-                                </p>
-
-                            <?php endif; ?>
-
-
                             <?php if ($button_text && $button_url) : ?>
 
                                 <a
@@ -82,6 +59,8 @@
                                 </a>
 
                             <?php endif; ?>
+
+
 
                         </div>
 
