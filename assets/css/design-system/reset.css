@@ -3,6 +3,11 @@
     src: url('../../../fonts/Soraya.ttf');
 }
 
+@font-face {
+    font-family: 'Laleh-Zar';
+    src: url('../../../fonts/Lalezar-Regular.ttf');
+}
+
 *{
     margin: 0;
     padding: 0;

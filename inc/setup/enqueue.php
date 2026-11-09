@@ -355,6 +355,29 @@ function pezhaal_enqueue_assets() {
             true
         );
     }
+
+
+
+    /* ==============================
+            NAVBAR SIDEBAR
+    ============================== */
+
+    $sidebar_js_relative_path = '/assets/js/navbar-sidebar.js';
+
+    $sidebar_js_path =
+        get_template_directory()
+        . $sidebar_js_relative_path;
+
+    if (file_exists($sidebar_js_path)) {
+
+        wp_enqueue_script(
+            'pezhaal-sidebar-script',
+            get_template_directory_uri() . $sidebar_js_relative_path,
+            array(),
+            filemtime($sidebar_js_path),
+            true
+        );
+    }
 }
 
 add_action(
