@@ -34,10 +34,13 @@ $shop_url     = get_permalink( $shop_page_id );
         <div class="product-categories__header">
 
             <div class="product-categories__heading">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-right.png');?>" alt="">
+
                 <span class="product-categories__eyebrow">
                     دسته‌بندی محصولات
                 </span>
-                <div class="title-divider"></div>
+                
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-left.png');?>" alt="">
             </div>
 
         </div>
@@ -113,8 +116,6 @@ $shop_url     = get_permalink( $shop_page_id );
             <?php endforeach; ?>
 
         </div>
-
-        <div class="section-divider"></div>
 
     </div>
 

@@ -20,16 +20,26 @@
    --------------------------------------------------------- */
 .new-arrival__header {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: var(--space-xl);
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg) 0;
 }
 
 
 .new-arrival__heading {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.new-arrival__heading img{
+    width: 300px;
+    height: 60px;
+}
+
+.new-arrival__heading span{
+    padding: 0 var(--space-md);
 }
 
 

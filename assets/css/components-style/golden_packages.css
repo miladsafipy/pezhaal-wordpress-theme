@@ -1,0 +1,39 @@
+
+
+
+
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+.golden-packages__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg) 0;
+}
+
+
+.golden-packages__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.golden-packages__heading img{
+    width: 300px;
+    height: 60px;
+}
+
+.golden-packages__heading span{
+    padding: 0 var(--space-md);
+}
+
+
+.golden-packages__eyebrow {
+    font-size: large;
+    font-weight: bolder;
+    color: var(--primary);
+}

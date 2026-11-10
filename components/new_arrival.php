@@ -14,10 +14,13 @@ $products = wc_get_products([
 
         <div class="new-arrival__header">
             <div class="new-arrival__heading">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-right.png');?>" alt="">
+
                 <span class="new-arrival__eyebrow">
                     جدیدترین محصولات
                 </span>
-                <div class="title-divider"></div>
+                
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-left.png');?>" alt="">
             </div>
         </div>
     
