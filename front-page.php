@@ -168,7 +168,9 @@ get_header();
                             GOLDEN PACKAGES
         ================================================================= -->
 
-    <?php get_template_part( 'components/golden-packages/golden_packages' ); ?>
+    <?php get_template_part('components/golden-packages/package-section'); ?>
+
+
 
 
 

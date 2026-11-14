@@ -62,3 +62,6 @@ add_action('wp_enqueue_scripts', 'pezhaal_enqueue_lucide');
 add_filter( 'loop_shop_per_page', function ( $products_per_page ) {
     return 9;
 }, 20 );
+
+
+

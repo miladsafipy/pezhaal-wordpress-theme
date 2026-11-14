@@ -13,6 +13,7 @@ function pezhaal_theme_setup() {
         )
     );
     add_theme_support('woocommerce');
+    add_theme_support('post-thumbnails');
 
 }
 
