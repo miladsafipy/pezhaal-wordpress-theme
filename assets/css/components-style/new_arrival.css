@@ -7,6 +7,7 @@
     flex-direction: column;
     width: 100%;
     padding: 10px 0;
+    margin-bottom: var(--space-lg);
     overflow: hidden;
 }
 
@@ -44,6 +45,7 @@
 
 
 .new-arrival__eyebrow {
+    text-align: center;
     font-size: large;
     font-weight: bolder;
     color: var(--primary);
@@ -55,6 +57,7 @@
    --------------------------------------------------------- */
 .new-arrival__track{
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-lg);
     justify-content: center;
     align-items: center;
@@ -157,4 +160,117 @@
 .new-arrival__button:hover span{
     background: var(--primary);
     color: var(--white);
+}
+
+
+
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .new-arrival-section {
+        padding: 70px 0;
+    }
+
+    .new-arrival__container {
+        width: min(100% - 50px, 1400px);
+    }
+
+    .new-arrival__header {
+        margin: var(--space-md) 0;
+    }
+
+
+    .new-arrival__eyebrow {
+        font-size: small;
+    }
+
+    .new-arrival__heading img{
+        width: 180px;
+        height: 35px;
+    }
+
+    .new-arrival__track {
+        gap: var(--space-lg);
+    }
+
+    .new-arrival__card {
+        flex-basis: 170px;
+    }
+
+    .new-arrival__name {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+
+    .new-arrival__price {
+        font-size: small;
+    }
+
+    
+
+    .new-arrival__button span{
+        padding: var(--space-xs) var(--space-sm);
+        font-size: small;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .new-arrival-section {
+        padding: 55px 0;
+    }
+
+
+    .new-arrival__header {
+        margin: var(--space-sm) 0;
+    }
+
+
+    .new-arrival__eyebrow {
+        font-size: smaller;
+    }
+
+    .new-arrival__heading img{
+        width: 120px;
+        height: 25px;
+    }
+
+    .new-arrival__track {
+        gap: var(--space-md);
+    }
+
+    .new-arrival__card {
+        flex-basis: 120px;
+    }
+
+    .new-arrival__content {
+        padding: 13px 14px 15px;
+    }
+
+    .new-arrival__name {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .new-arrival__price {
+        font-size: small;
+    }
+
+    .new-arrival__button span{
+        padding: var(--space-xs) var(--space-sm);
+        font-size: smaller;
+    }
+
 }
