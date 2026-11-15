@@ -28,14 +28,18 @@ if (!$packages_query->have_posts()) {
 
     <div class="golden-package-section__header">
 
-        <div>
-            <span class="golden-package-section__eyebrow">
-                انتخاب ویژه پژال
-            </span>
+        <div class="golden-packages__header">
 
-            <h2 class="golden-package-section__title">
-                پکیج‌های طلایی
-            </h2>
+            <div class="golden-packages__heading">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-right.png');?>" alt="">
+
+                <span class="golden-packages__eyebrow">
+                    پکیج های طلایی
+                </span>
+                
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-left.png');?>" alt="">
+            </div>
+
         </div>
 
         <a

@@ -23,7 +23,6 @@ require_once get_template_directory() . '/inc/golden-packages/package-fields.php
 require_once get_template_directory() . '/inc/golden-packages/package-save.php';
 require_once get_template_directory() . '/inc/golden-packages/package-pricing.php';
 require_once get_template_directory() . '/inc/golden-packages/package-cart.php';
-require_once get_template_directory() . '/inc/helpers/disable-package-block.php';
 
 
 
