@@ -9,21 +9,29 @@ get_header( 'shop' );
 
     <div class="shop-page__container">
 
-        <div class="section-divider"></div>
+        
         <!-- عنوان صفحه فروشگاه -->
         <header class="shop-page__header">
-            <h1 class="shop-page__title">
-                محصولات پژال
-            </h1>
-            <div class="section-divider"></div>
+
+            <div class="shop-page__header">
+
+                <div class="shop-page__heading">
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-right.png');?>" alt="">
+
+                    <h2 class="shop-page__title">
+                        محصولات پژال
+                    </h2>
+
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/leaf-divider-left.png');?>" alt="">
+                </div>
+
+            </div>
+
         </header>
 
         <?php if ( woocommerce_product_loop() ) : ?>
 
-            <?php
-            // مرتب‌سازی، تعداد نتایج و سایر اجزای استاندارد
-            do_action( 'woocommerce_before_shop_loop' );
-            ?>
+            
 
             <!-- شبکه کارت‌های محصولات -->
             <div class="product-grid">

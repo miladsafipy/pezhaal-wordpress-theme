@@ -9,21 +9,39 @@
     margin-inline: auto;
 }
 
-.shop-page__header {
-    margin-bottom: var(--space-xl);
-}
 
 .shop-page__title {
+    text-align: center;
+}
+
+.shop-page__header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: var(--space-lg) 0;
 }
+
+
+.shop-page__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.shop-page__heading img{
+    display: flex;
+    width: 300px;
+    height: 60px;
+}
+
+
 
 /* شبکه محصولات */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-md);
     align-items: center;
     margin: var(--space-2xl) auto;
 }
@@ -77,30 +95,58 @@
 
 
 
-/* تبلت */
-@media (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-lg);
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .shop-page__header {
+        margin: var(--space-md) 0;
     }
+
+    .shop-page__heading img{
+        width: 180px;
+        height: 35px;
+    }
+
+    .shop-page__title{
+        font-size: small;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: var(--space-xl) auto;
+    }
+
 }
 
-/* موبایل */
-@media (max-width: 700px) {
-    .shop-page {
-        padding-block: 24px 40px;
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .shop-page__header {
+        margin: var(--space-sm) 0;
     }
 
-    .shop-page__container {
-        width: calc(100% - 28px);
+
+    .shop-page__heading img{
+        width: 120px;
+        height: 25px;
+    }
+
+    .shop-page__title{
+        font-size: smaller;
     }
 
     .product-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-sm);
+        margin: var(--space-lg) auto;
     }
 
-    .shop-page__title {
-        font-size: 1.5rem;
-    }
+
 }
