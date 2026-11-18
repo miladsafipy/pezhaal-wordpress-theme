@@ -12,8 +12,6 @@ if ( ! $product instanceof WC_Product ) {
 $product_id = $product->get_id();
 $product_url = get_permalink( $product_id );
 
-// توضیحات مختصر محصول
-$short_description = $product->get_short_description();
 
 // امتیاز و تعداد نظرات
 $average_rating = $product->get_average_rating();
@@ -151,53 +149,46 @@ $max_quantity = $product->get_max_purchase_quantity();
 
                     <?php endif; ?>
 
-                    <button
-                        type="submit"
-                        name="add-to-cart"
-                        value="<?php echo esc_attr( $product_id ); ?>"
-                        class="button product-card__add-to-cart"
-                    >
-                        افزودن به سبد خرید
-                    </button>
+                    <div class="product-card__buttons">
+
+                        <button
+                            type="submit"
+                            name="add-to-cart"
+                            value="<?php echo esc_attr( $product_id ); ?>"
+                            class="general-btn product-card__add-to-cart"
+                        >
+                            افزودن
+                        </button>
+
+                        <a
+                            class="general-btn product-card__view-product"
+                            href="<?php echo esc_url( $product_url ); ?>"
+                        >
+                            مشاهده
+                        </a>
+
+                    </div>
+
 
                 </form>
 
-            <?php elseif ( $product->is_type( 'variable' ) && $is_in_stock ) : ?>
+                <?php elseif ( ! $is_in_stock ) : ?>
+    
+                    <button
+                        type="button"
+                        class="general-btn not-exist"
+                        disabled
+                    >
+                        ناموجود
+                    </button>
+    
+                
+    
+                <?php endif; ?>
+    
+                
+            
 
-                <a
-                    class="button product-card__select-options"
-                    href="<?php echo esc_url( $product_url ); ?>"
-                >
-                    انتخاب ویژگی‌ها
-                </a>
-
-            <?php elseif ( ! $is_in_stock ) : ?>
-
-                <button
-                    type="button"
-                    class="button product-card__add-to-cart"
-                    disabled
-                >
-                    ناموجود
-                </button>
-
-            <?php else : ?>
-
-                <a
-                    class="button product-card__select-options"
-                    href="<?php echo esc_url( $product_url ); ?>"
-                >
-                    مشاهده محصول
-                </a>
-
-            <?php endif; ?>
-
-            <a
-                class="product-card__view-product"
-                href="<?php echo esc_url( $product_url ); ?>"
-            >
-                مشاهده محصول
-            </a>
 
         </div>
 
