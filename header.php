@@ -87,6 +87,10 @@
                 <span class="icon-cart">
                     <i data-lucide="shopping-cart"></i>
                 </span>
+
+                <span class="cart-count <?php echo WC()->cart->get_cart_contents_count() > 0 ? 'is-visible' : ''; ?>">
+                    <?php echo esc_html(WC()->cart->get_cart_contents_count()); ?>
+                </span>
             </a>
 
 

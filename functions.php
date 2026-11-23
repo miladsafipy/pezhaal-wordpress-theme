@@ -16,13 +16,15 @@ require_once get_template_directory() . '/inc/language/translator.php';
 
 
 // Golden Packages System
- 
-
 require_once get_template_directory() . '/inc/golden-packages/register-package.php';
 require_once get_template_directory() . '/inc/golden-packages/package-fields.php';
 require_once get_template_directory() . '/inc/golden-packages/package-save.php';
 require_once get_template_directory() . '/inc/golden-packages/package-pricing.php';
 require_once get_template_directory() . '/inc/golden-packages/package-cart.php';
+
+
+// AJAX Cart
+require_once get_template_directory() . '/inc/woocommerce/ajax-cart.php';
 
 
 

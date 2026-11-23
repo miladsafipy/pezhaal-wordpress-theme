@@ -292,6 +292,36 @@ function pezhaal_enqueue_assets() {
         );
     }
 
+
+    /* ==============================
+   Product Card Add to Cart
+   ============================== */
+
+    $product_cart_js_relative_path = '/assets/js/product-cart.js';
+
+    $product_cart_js_path =
+        get_template_directory() . $product_cart_js_relative_path;
+
+    if (file_exists($product_cart_js_path)) {
+
+        wp_enqueue_script(
+            'pezhaal-product-cart-script',
+            get_template_directory_uri() . $product_cart_js_relative_path,
+            array('jquery'),
+            filemtime($product_cart_js_path),
+            true
+        );
+
+        wp_localize_script(
+            'pezhaal-product-cart-script',
+            'PezhaalCart',
+            array(
+                'ajaxUrl' => admin_url('admin-ajax.php'),
+                'nonce'   => wp_create_nonce('pezhaal_cart_nonce')
+            )
+        );
+    }
+
     /* ==============================
         Carousel Gallery
     ============================== */

@@ -106,6 +106,42 @@
 
 
 /* -------------------------
+   Cart Badge
+------------------------- */
+.cart-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-count {
+    position: absolute;
+    top: -9px;
+    right: -10px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: var(--red);
+    color: var(--white);
+    font-size: small;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+}
+
+.cart-count.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* -------------------------
    منوی وسط
 ------------------------- */
 

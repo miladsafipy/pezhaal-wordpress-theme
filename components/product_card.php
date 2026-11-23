@@ -122,7 +122,7 @@ $max_quantity = $product->get_max_purchase_quantity();
 
                 <form
                     class="cart product-card__cart-form"
-                    action="<?php echo esc_url( $product_url ); ?>"
+                    action="<?php echo esc_url( wc_get_cart_url() ); ?>"
                     method="post"
                 >
 
@@ -155,7 +155,9 @@ $max_quantity = $product->get_max_purchase_quantity();
                             type="submit"
                             name="add-to-cart"
                             value="<?php echo esc_attr( $product_id ); ?>"
-                            class="general-btn product-card__add-to-cart"
+                            data-product_id="<?php echo esc_attr( $product_id ); ?>"
+                            data-quantity="1"
+                            class="general-btn product-card__add-to-cart ajax_add_to_cart add_to_cart_button"
                         >
                             افزودن
                         </button>
