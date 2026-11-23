@@ -6,7 +6,7 @@ global $product;
 
 <div class="product-summary">
 
-    <div class="product-category">
+    <div class="product-summary__category">
 
         <label>
             دسته بندی: 
@@ -46,9 +46,9 @@ global $product;
     </div>
 
 
-    <div class="product-detail__content">
+    <div class="product-summary__content">
 
-        <h2 class="product-title">
+        <h2 class="product-summary__title">
     
             <?php echo esc_html( $product->get_name() ); ?>
     
@@ -87,7 +87,7 @@ global $product;
     
         <?php if ( $product->get_description() ) : ?>
     
-            <div class="product-detail__description">
+            <div class="product-summary__description">
     
                 <?php
                 echo wp_kses_post(
@@ -100,12 +100,12 @@ global $product;
         <?php endif; ?>
     
     
-        <div class="product-detail__price">
-            <span class="price-text">
+        <div class="product-summary__price">
+            <span class="product-summary__price-text">
                 قیمت: 
             </span>
     
-            <span class="price-count">
+            <span class="product-summary__price-count">
                 <?php echo $product->get_price_html(); ?>
             </span>
     
@@ -114,9 +114,9 @@ global $product;
     
     
         
-        <div class="product-detail__stock">
+        <div class="product-summary__stock">
     
-            <span class="stock-status">
+            <span class="product-summary__stock-status">
                 وضعیت موجودی: 
             </span>
     
@@ -124,13 +124,13 @@ global $product;
     
                 <?php if ( $product->is_in_stock() ) : ?>
         
-                    <span class="product-available">
+                    <span class="product-summary__product-available">
                         موجود در انبار
                     </span>
         
                     <?php if ( $product->managing_stock() ) : ?>
         
-                        <span>
+                        <span class="product-summary__available-count">
                             (<?php echo esc_html( $product->get_stock_quantity() ); ?> عدد)
                         </span>
         
@@ -138,7 +138,7 @@ global $product;
         
                 <?php else : ?>
         
-                    <span class="product-unavailable">
+                    <span class="product-summary__product-unavailable">
                         ناموجود
                     </span>
         
@@ -152,15 +152,15 @@ global $product;
 
 
     <form
-        class="product-detail__purchase cart"
+        class="product-summary__purchase cart"
         method="post"
         action="<?php echo esc_url( wc_get_cart_url() ); ?>"
     >
 
-        <div class="product-quantity">
+        <div class="product-summary__product-quantity">
 
-            <label for="product-quantity">
-                تعداد سفارش: 
+            <label for="product-summary__product-quantity">
+                تعداد: 
             </label>
 
 
@@ -180,7 +180,7 @@ global $product;
             type="submit"
             name="add-to-cart"
             value="<?php echo esc_attr( $product->get_id() ); ?>"
-            class="product-detail__button"
+            class="product-summary__button-add-to-cart"
         >
             افزودن به سبد خرید
         </button>

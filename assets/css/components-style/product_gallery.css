@@ -12,7 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 100%;
+    padding: var(--space-lg);
 }
 
 .product-main-image {

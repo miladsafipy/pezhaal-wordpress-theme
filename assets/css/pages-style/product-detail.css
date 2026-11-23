@@ -9,10 +9,10 @@
 }
 
 .single-product__image-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--space-lg);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-md);
     gap: var(--space-lg);
     height: max-content;
 }
@@ -21,13 +21,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
     margin: var(--space-md);
 }
 
 .single-product__content{
     display: flex;
-    width: 50%;
+    width: 100%;
     margin: var(--space-md);
 }
 
@@ -45,10 +45,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
-    margin: 12px 0 20px;
+    gap: var(--space-md);
     direction: rtl;
-    font-size: 14px;
 }
 
 .product-rating__stars {
@@ -59,16 +57,56 @@
 .product-rating .star-rating {
     float: none;
     margin: 0;
-    color: #d99a16;
-    font-size: 18px;
+    color: var(--gold);
 }
 
 .product-rating__average {
     color: var(--primary-dark, #102b21);
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .product-rating__count {
-    color: #777;
-    font-size: 13px;
+    color: var(--text-light);
+    font-size: small;
+}
+
+
+/* ------------------------------
+            Tablet
+---------------------------------*/
+@media (max-width: 900px){
+    .single-product{
+        padding: var(--space-md);
+        gap: var(--space-lg);
+    }
+
+    .single-product__image-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: var(--space-md);
+        gap: var(--space-md);
+        
+    }
+
+    
+}
+
+
+
+/* ------------------------------
+            Mobile
+---------------------------------*/
+@media (max-width: 500px){
+    .single-product{
+        padding: var(--space-sm);
+        gap: var(--space-md);
+    }
+
+    .single-product__image-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: var(--space-md);
+        gap: var(--space-md);
+        
+    }
 }

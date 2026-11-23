@@ -46,7 +46,7 @@ if ( ! function_exists( 'pezhaal_persian_date' ) ) {
 <section class="product-reviews" id="product-reviews">
 
     <div class="product-reviews__header">
-        <div>
+        <div class="product-reviews__title">
             <h4>نظرات مشتریان</h4>
             <p>
                 <?php echo esc_html( $product->get_review_count() ); ?>
@@ -188,7 +188,7 @@ if ( ! function_exists( 'pezhaal_persian_date' ) ) {
 
         <div class="product-reviews__form">
 
-            <h3>نظر شما درباره این محصول چیست؟</h3>
+            <span>نظر شما درباره این محصول چیست؟</span>
 
             <?php
             $rating_enabled = function_exists( 'wc_review_ratings_enabled' )
