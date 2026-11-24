@@ -106,3 +106,136 @@ add_action(
     'wp_ajax_nopriv_pezhaal_add_to_cart',
     'pezhaal_ajax_add_to_cart'
 );
+
+
+
+
+
+// Cart page -> Update quantity
+
+/**
+ * Update cart item quantity using AJAX.
+ */
+
+add_action(
+    'wp_ajax_pezhaal_update_cart_item',
+    'pezhaal_update_cart_item'
+);
+
+add_action(
+    'wp_ajax_nopriv_pezhaal_update_cart_item',
+    'pezhaal_update_cart_item'
+);
+
+
+function pezhaal_update_cart_item() {
+
+    // Verify nonce.
+    check_ajax_referer(
+        'pezhaal_cart_nonce',
+        'nonce'
+    );
+
+
+    // Get cart item key.
+    $cart_item_key = isset( $_POST['cart_item_key'] )
+        ? sanitize_text_field( wp_unslash( $_POST['cart_item_key'] ) )
+        : '';
+
+
+    // Get new quantity.
+    $quantity = isset( $_POST['quantity'] )
+        ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) )
+        : 0;
+
+
+    // Validate inputs.
+    if ( empty( $cart_item_key ) || $quantity < 1 ) {
+
+        wp_send_json_error([
+            'message' => 'اطلاعات ارسالی معتبر نیست.'
+        ]);
+
+    }
+
+
+    // Check cart item.
+    $cart = WC()->cart->get_cart();
+
+
+    if ( ! isset( $cart[ $cart_item_key ] ) ) {
+
+        wp_send_json_error([
+            'message' => 'محصول موردنظر در سبد خرید وجود ندارد.'
+        ]);
+
+    }
+
+
+    $product = $cart[ $cart_item_key ]['data'];
+
+
+    // Check stock.
+    if (
+        ! $product->is_purchasable() ||
+        ! $product->has_enough_stock( $quantity )
+    ) {
+
+        wp_send_json_error([
+            'message' => 'تعداد درخواستی بیشتر از موجودی محصول است.'
+        ]);
+
+    }
+
+
+    // Update quantity and calculate totals.
+    WC()->cart->set_quantity(
+        $cart_item_key,
+        $quantity,
+        true
+    );
+
+
+    // Get updated cart item.
+    $updated_cart = WC()->cart->get_cart();
+
+    $updated_item = $updated_cart[ $cart_item_key ];
+
+
+    // Get updated item subtotal.
+    $item_subtotal = WC()->cart->get_product_subtotal(
+        $updated_item['data'],
+        $updated_item['quantity']
+    );
+
+
+    // Capture cart subtotal HTML.
+    ob_start();
+
+    wc_cart_totals_subtotal_html();
+
+    $cart_subtotal = ob_get_clean();
+
+
+    // Capture cart total HTML.
+    ob_start();
+
+    wc_cart_totals_order_total_html();
+
+    $cart_total = ob_get_clean();
+
+
+    // Send response.
+    wp_send_json_success([
+
+        'message'       => 'تعداد محصول با موفقیت به‌روزرسانی شد.',
+
+        'item_subtotal' => $item_subtotal,
+
+        'cart_subtotal' => $cart_subtotal,
+
+        'cart_total'    => $cart_total,
+
+    ]);
+
+}

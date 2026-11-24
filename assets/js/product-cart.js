@@ -132,3 +132,152 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+
+
+
+
+
+
+
+
+/**
+ * Update cart item quantity using AJAX.
+ */
+
+document.addEventListener('click', async function (event) {
+
+    const button = event.target.closest('.cart-item-update');
+
+    if (!button) {
+        return;
+    }
+
+    const cartItem = button.closest('.cart-item');
+
+    const quantityInput = cartItem.querySelector(
+        '.cart-item-quantity-input'
+    );
+
+    const cartItemKey = cartItem.dataset.cartItemKey;
+
+    const quantity = parseInt(quantityInput.value, 10);
+
+
+    // Validate quantity.
+    if (!quantity || quantity < 1) {
+
+        alert('لطفاً تعداد معتبر وارد کنید.');
+
+        return;
+    }
+
+
+    // Prevent multiple requests.
+    button.disabled = true;
+
+    const originalText = button.textContent;
+
+    button.textContent = 'در حال بروزرسانی...';
+
+
+    // Prepare AJAX data.
+    const formData = new URLSearchParams();
+
+    formData.append(
+        'action',
+        'pezhaal_update_cart_item'
+    );
+
+    formData.append(
+        'cart_item_key',
+        cartItemKey
+    );
+
+    formData.append(
+        'quantity',
+        quantity
+    );
+
+    formData.append(
+        'nonce',
+        PezhaalCart.nonce
+    );
+
+
+    try {
+
+        const response = await fetch(
+            PezhaalCart.ajaxUrl,
+            {
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+
+                body: formData
+            }
+        );
+
+
+        const result = await response.json();
+
+
+        if (!result.success) {
+
+            alert(
+                result.data.message ||
+                'خطایی هنگام به‌روزرسانی رخ داد.'
+            );
+
+            return;
+        }
+
+
+        // Update product subtotal.
+        cartItem.querySelector(
+            '.cart-item-subtotal'
+        ).innerHTML = result.data.item_subtotal;
+
+
+        // Update cart subtotal.
+        document.querySelector(
+            '.cart-subtotal strong'
+        ).innerHTML = result.data.cart_subtotal;
+
+
+        // Update final total.
+        document.querySelector(
+            '.cart-total strong'
+        ).innerHTML = result.data.cart_total;
+
+
+        // Success message.
+        button.textContent = 'به‌روزرسانی شد';
+
+    }
+
+
+    catch (error) {
+
+        console.error('Cart update error:', error);
+
+        alert('ارتباط با سرور برقرار نشد.');
+
+    }
+
+
+    finally {
+
+        button.disabled = false;
+
+        setTimeout(function () {
+
+            button.textContent = originalText;
+
+        }, 1500);
+
+    }
+
+});
